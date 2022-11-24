@@ -2,11 +2,9 @@ FROM node:19.1.0
 
 LABEL maintainer="Bret Edwards <bret@jbecomputersolutions.com>"
 
-ENV DRY_RUN="--dry-run"
-
-RUN git clone https://github.com/xrchz/rocketarb
+RUN git clone https://github.com/xrchz/rocketarb rocketarb
 
 WORKDIR /rocketarb
 
-RUN npm install
+RUN npm i
 ENTRYPOINT ["./rocketarb.js"]
